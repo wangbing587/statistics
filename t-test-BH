@@ -1,0 +1,8 @@
+from scipy import stats
+
+for i in range(0, data.shape[0]):
+    ttest = stats.ttest_ind(tumor_data.iloc[i], normal_data.iloc[i])
+    pvalue.append(ttest[1])
+pvalue = np.array(pvalue)
+rankP = np.argsort(-pvalue)
+FDR = pvalue * len(pvalue) / (np.argsort(rankP) + 1)
