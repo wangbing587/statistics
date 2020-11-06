@@ -1,0 +1,4 @@
+from sklearn.feature_selection import SelectKBest, f_classif 
+selector = SelectKBest(f_classif, k=2)
+   selector.fit(data.drop(['label'], axis=1), data['label'].tolist())
+   pvalues = selector.pvalues_
