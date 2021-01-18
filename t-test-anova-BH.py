@@ -1,7 +1,7 @@
 from scipy import stats
 
 for i in range(0, data.shape[0]):
-    ttest = ttest_ind(tumor_data.iloc[i], normal_data.iloc[i])
+    ttest = ttest_ind(tumor_data.iloc[i], normal_data.iloc[i], equal_var = False)
     pvalue.append(ttest[1])
 pvalue = np.array(pvalue)
 
